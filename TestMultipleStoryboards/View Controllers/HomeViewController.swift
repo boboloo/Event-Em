@@ -20,24 +20,23 @@ class HomeViewController: UIViewController {
         }
         return array
     }()
+    
+    @IBOutlet weak var NoButton: UIButton!
+    @IBOutlet weak var CheckButton: UIButton!
     @IBOutlet weak var kolodaView: KolodaView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
         // setup
         self.navigationItem.hidesBackButton = true
         kolodaView.dataSource = self
         kolodaView.delegate = self
-        
-        self.navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(pushToNextVC))
     }
     
     func pushToNextVC() {
-        let settings = SettingsTableViewController()
-        self.navigationController?.pushViewController(settings, animated:
+        let settings = self.storyboard?.instantiateViewController(withIdentifier: "SettingsTVC") as? SettingsTableViewController
+        self.navigationController?.pushViewController(settings!, animated:
             true)
     }
 
@@ -50,9 +49,10 @@ class HomeViewController: UIViewController {
     }
 }
 
+// Modifies cards interact with the view controller
 extension HomeViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        koloda.resetCurrentCardIndex()
+        koloda.reloadData()
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -69,6 +69,7 @@ extension HomeViewController: KolodaViewDelegate {
     }
 }
 
+// Modifies how cards are displayed with the view controller
 extension HomeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {

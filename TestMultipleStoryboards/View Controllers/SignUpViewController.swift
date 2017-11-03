@@ -84,6 +84,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    // Displays error messages with a given title and description message, has default cancel button
     func errorMessage(title: String, message: String) {
         self.alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
@@ -92,6 +93,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.present(self.alertController!, animated: true, completion: nil)
     }
     
+    // returns to previous view
     @IBAction func returnBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
