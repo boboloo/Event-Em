@@ -23,7 +23,7 @@ class SettingsTableViewController: UITableViewController {
         super.viewWillAppear(animated)
      
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            self.title = DataStore.shared.getUser().email!
+            self.title = DataStore.shared.getUser().id
         }
     }
 
@@ -41,15 +41,20 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
-        cell.profileName.text = "Hello"
-        // Configure the cell...
 
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
+            cell.profileName.text = DataStore.shared.getUser().name
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath) as! LogoutTableViewCell
+            return cell
+        }
     }
     
 

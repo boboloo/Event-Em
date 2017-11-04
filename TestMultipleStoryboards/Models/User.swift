@@ -12,15 +12,12 @@ class User {
     
     var id: String?
     var email: String?
+    var name: String?
     
-    init() {
-        id = ""
-        email = ""
-    }
-    
-    init(id: String, email: String) {
+    init(id: String, email: String, name: String) {
         self.id = id
         self.email = email
+        self.name = name
     }
     
 }
