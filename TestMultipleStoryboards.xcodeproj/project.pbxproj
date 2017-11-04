@@ -50,7 +50,7 @@
 		791F3E401FA68D660028C37B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		79BA08341FA4123400F17D97 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		79BA08621FA414B400F17D97 /* EventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetail.storyboard; sourceTree = "<group>"; };
-		79BF4ACB1FA7705F00C3D3A8 /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomOverlayView.swift; path = "TestMultipleStoryboards/View Controllers/CustomOverlayView.swift"; sourceTree = SOURCE_ROOT; };
+		79BF4ACB1FA7705F00C3D3A8 /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomOverlayView.swift; path = "TestMultipleStoryboards/Custom Views/CustomOverlayView.swift"; sourceTree = SOURCE_ROOT; };
 		79BF4ACD1FA7740D00C3D3A8 /* ModifiedKolodaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifiedKolodaView.xib; sourceTree = "<group>"; };
 		79BF4AD11FA77AF900C3D3A8 /* ModifiedKolodaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedKolodaView.swift; sourceTree = "<group>"; };
 		79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -99,10 +99,13 @@
 		369482D31F8B31EC00D86FF6 /* TestMultipleStoryboards */ = {
 			isa = PBXGroup;
 			children = (
+				79F168021FAD420D0022FBDA /* Custom Views */,
+				79F168011FAD42030022FBDA /* Custom Cells */,
 				791F3E291FA569D40028C37B /* Models */,
 				369482E81F8B320000D86FF6 /* App Delegate */,
 				369482E71F8B31F900D86FF6 /* View Controllers */,
 				369482E61F8B31F200D86FF6 /* Storyboards */,
+				79F168031FAD43050022FBDA /* Views */,
 				369482E91F8B320900D86FF6 /* Support Files */,
 				36E51A531F8B356600E72373 /* Info.plist */,
 				F8813C771FA5068E0070119E /* GoogleService-Info.plist */,
@@ -117,8 +120,6 @@
 				F8813CB51FA50C4E0070119E /* SignUp.storyboard */,
 				79BA08621FA414B400F17D97 /* EventDetail.storyboard */,
 				F8B4ACC81FA50DF60066EFC6 /* LaunchScreen.storyboard */,
-				79BF4ACD1FA7740D00C3D3A8 /* ModifiedKolodaView.xib */,
-				78997ABA1FA91696006BC83E /* OverlayView.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -127,15 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */,
-				79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */,
-				79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */,
 				369482EA1F8B324200D86FF6 /* MainViewController.swift */,
 				79BA08341FA4123400F17D97 /* HomeViewController.swift */,
-				8CED349D1FA51A6B002707CE /* EventDetailViewController.swift */,
 				F811EAE31FA50FA00042C0F5 /* SignUpViewController.swift */,
-				79BF4ACB1FA7705F00C3D3A8 /* CustomOverlayView.swift */,
-				79BF4AD11FA77AF900C3D3A8 /* ModifiedKolodaView.swift */,
-				79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */,
+				8CED349D1FA51A6B002707CE /* EventDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -165,6 +161,35 @@
 			);
 			path = Models;
 			sourceTree = "<group>";
+		};
+		79F168011FAD42030022FBDA /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */,
+				79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */,
+				79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		79F168021FAD420D0022FBDA /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				79BF4ACB1FA7705F00C3D3A8 /* CustomOverlayView.swift */,
+				79BF4AD11FA77AF900C3D3A8 /* ModifiedKolodaView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		79F168031FAD43050022FBDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				79BF4ACD1FA7740D00C3D3A8 /* ModifiedKolodaView.xib */,
+				78997ABA1FA91696006BC83E /* OverlayView.xib */,
+			);
+			name = Views;
+			path = TestMultipleStoryboards/Views;
+			sourceTree = SOURCE_ROOT;
 		};
 		8F772A804021649F31409B4E /* Pods */ = {
 			isa = PBXGroup;
