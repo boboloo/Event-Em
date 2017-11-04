@@ -119,7 +119,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7n-oc-3mx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7n-oc-3mx">
                                 <rect key="frame" x="101" y="573" width="59" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="0mo-sB-WS8"/>
@@ -135,7 +135,7 @@
                                 <rect key="frame" x="16" y="114" width="343" height="414"/>
                                 <color key="backgroundColor" red="1" green="0.70980392156862748" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbA-ud-aS5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbA-ud-aS5">
                                 <rect key="frame" x="230" y="573" width="61" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="61" id="Jec-DA-Jck"/>
@@ -177,7 +177,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bZM-IC-CM8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.70787600809999995" blue="0.40480989449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="187" id="nwf-aa-1ng" customClass="ProfileTableViewCell" customModule="TestMultipleStoryboards" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="187"/>
@@ -187,59 +187,60 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo-3" translatesAutoresizingMaskIntoConstraints="NO" id="nTf-R0-aJP">
-                                            <rect key="frame" x="67" y="29" width="240" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvI-lC-fBJ">
-                                            <rect key="frame" x="138" y="165" width="99" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvI-lC-fBJ">
+                                            <rect key="frame" x="170" y="165.5" width="36" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="nTf-R0-aJP" firstAttribute="leading" secondItem="e92-oH-hNB" secondAttribute="leadingMargin" constant="59" id="I7V-UH-cT7"/>
+                                        <constraint firstItem="nTf-R0-aJP" firstAttribute="leading" secondItem="e92-oH-hNB" secondAttribute="leadingMargin" constant="-8" id="I7V-UH-cT7"/>
                                         <constraint firstItem="fvI-lC-fBJ" firstAttribute="centerX" secondItem="e92-oH-hNB" secondAttribute="centerX" id="P10-wI-JQM"/>
                                         <constraint firstItem="nTf-R0-aJP" firstAttribute="centerX" secondItem="e92-oH-hNB" secondAttribute="centerX" id="QIF-DQ-QKG"/>
-                                        <constraint firstItem="nTf-R0-aJP" firstAttribute="centerY" secondItem="e92-oH-hNB" secondAttribute="centerY" id="YAq-6c-tr8"/>
-                                        <constraint firstItem="nTf-R0-aJP" firstAttribute="top" secondItem="e92-oH-hNB" secondAttribute="topMargin" constant="21" id="rxo-IS-oaA"/>
+                                        <constraint firstItem="nTf-R0-aJP" firstAttribute="centerY" secondItem="e92-oH-hNB" secondAttribute="centerY" constant="-14.25" id="YAq-6c-tr8"/>
+                                        <constraint firstItem="nTf-R0-aJP" firstAttribute="top" secondItem="e92-oH-hNB" secondAttribute="topMargin" constant="-8" id="rxo-IS-oaA"/>
                                         <constraint firstItem="fvI-lC-fBJ" firstAttribute="top" secondItem="nTf-R0-aJP" secondAttribute="bottom" constant="8" id="ugI-mN-83E"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.70787600809999995" blue="0.40480989449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="profileImage" destination="nTf-R0-aJP" id="VWt-KU-hG8"/>
                                     <outlet property="profileName" destination="fvI-lC-fBJ" id="rJc-J4-jdV"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="187" id="1FT-GN-fcB" customClass="ProfileTableViewCell" customModule="TestMultipleStoryboards" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="215" width="375" height="187"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="1FT-GN-fcB" customClass="SettingTableViewCell" customModule="TestMultipleStoryboards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="215" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1FT-GN-fcB" id="p2m-Pv-omC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="186.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.70787600809999995" blue="0.40480989449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="63o-xL-H0L" customClass="LogoutTableViewCell" customModule="TestMultipleStoryboards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="259" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="63o-xL-H0L" id="Fo1-YQ-2c5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo-3" translatesAutoresizingMaskIntoConstraints="NO" id="fU8-0D-Qwh">
-                                            <rect key="frame" x="67" y="29" width="240" height="128"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S71-EJ-8qI">
-                                            <rect key="frame" x="138" y="165" width="99" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fN-lM-TVg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.94290095567703247" green="0.57052689790725708" blue="0.20034369826316833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Logout">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="LogoutBtn:" destination="63o-xL-H0L" eventType="touchUpInside" id="Xqt-ZD-Uqp"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="fU8-0D-Qwh" firstAttribute="top" secondItem="p2m-Pv-omC" secondAttribute="topMargin" constant="21" id="4oO-yl-BeX"/>
-                                        <constraint firstItem="S71-EJ-8qI" firstAttribute="top" secondItem="fU8-0D-Qwh" secondAttribute="bottom" constant="8" id="5Z6-Qo-132"/>
-                                        <constraint firstItem="S71-EJ-8qI" firstAttribute="centerX" secondItem="p2m-Pv-omC" secondAttribute="centerX" id="QrX-qr-fAO"/>
-                                        <constraint firstItem="fU8-0D-Qwh" firstAttribute="centerY" secondItem="p2m-Pv-omC" secondAttribute="centerY" id="fWi-Qa-RaD"/>
-                                        <constraint firstItem="fU8-0D-Qwh" firstAttribute="leading" secondItem="p2m-Pv-omC" secondAttribute="leadingMargin" constant="59" id="fqO-mP-jBO"/>
-                                        <constraint firstItem="fU8-0D-Qwh" firstAttribute="centerX" secondItem="p2m-Pv-omC" secondAttribute="centerX" id="maa-pb-F7g"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="profileImage" destination="fU8-0D-Qwh" id="VwH-eG-1i1"/>
-                                    <outlet property="profileName" destination="S71-EJ-8qI" id="dsv-df-NBn"/>
-                                </connections>
+                                <color key="backgroundColor" red="1" green="0.70787600809999995" blue="0.40480989449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>

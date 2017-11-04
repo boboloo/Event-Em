@@ -21,6 +21,10 @@ class DataStore {
         ref = Database.database().reference()
     }
     
+    func getUser() -> User {
+        return self.currUser
+    }
+    
     func setUser(user: User) {
         currUser = user
     }

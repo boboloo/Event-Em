@@ -25,6 +25,7 @@
 		79BF4AD21FA77AF900C3D3A8 /* ModifiedKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF4AD11FA77AF900C3D3A8 /* ModifiedKolodaView.swift */; };
 		79F167FC1FAD1F010022FBDA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */; };
 		79F167FE1FAD30BB0022FBDA /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */; };
+		79F168001FAD37180022FBDA /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */; };
 		8CED349E1FA51A6B002707CE /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED349D1FA51A6B002707CE /* EventDetailViewController.swift */; };
 		F811EAE41FA50FA00042C0F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811EAE31FA50FA00042C0F5 /* SignUpViewController.swift */; };
 		F811EAE61FA511BF0042C0F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F811EAE51FA511BF0042C0F5 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		79BF4AD11FA77AF900C3D3A8 /* ModifiedKolodaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedKolodaView.swift; sourceTree = "<group>"; };
 		79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		8CED349D1FA51A6B002707CE /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		D78BE66BE0413095C48912A0 /* Pods_TestMultipleStoryboards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestMultipleStoryboards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F811EAE31FA50FA00042C0F5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = "TestMultipleStoryboards/View Controllers/SignUpViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -111,12 +113,12 @@
 		369482E61F8B31F200D86FF6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				78997ABA1FA91696006BC83E /* OverlayView.xib */,
 				F811EAE51FA511BF0042C0F5 /* Main.storyboard */,
-				79BF4ACD1FA7740D00C3D3A8 /* ModifiedKolodaView.xib */,
 				F8813CB51FA50C4E0070119E /* SignUp.storyboard */,
 				79BA08621FA414B400F17D97 /* EventDetail.storyboard */,
 				F8B4ACC81FA50DF60066EFC6 /* LaunchScreen.storyboard */,
+				79BF4ACD1FA7740D00C3D3A8 /* ModifiedKolodaView.xib */,
+				78997ABA1FA91696006BC83E /* OverlayView.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */,
+				79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */,
 				79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */,
 				369482EA1F8B324200D86FF6 /* MainViewController.swift */,
 				79BA08341FA4123400F17D97 /* HomeViewController.swift */,
@@ -132,7 +135,7 @@
 				F811EAE31FA50FA00042C0F5 /* SignUpViewController.swift */,
 				79BF4ACB1FA7705F00C3D3A8 /* CustomOverlayView.swift */,
 				79BF4AD11FA77AF900C3D3A8 /* ModifiedKolodaView.swift */,
-				79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */,
+				79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				8CED349E1FA51A6B002707CE /* EventDetailViewController.swift in Sources */,
 				369482D51F8B31EC00D86FF6 /* AppDelegate.swift in Sources */,
 				79BA08351FA4123400F17D97 /* HomeViewController.swift in Sources */,
+				79F168001FAD37180022FBDA /* LogoutTableViewCell.swift in Sources */,
 				78997AC01FA931C4006BC83E /* SettingsTableViewController.swift in Sources */,
 				79F167FE1FAD30BB0022FBDA /* SettingTableViewCell.swift in Sources */,
 				F811EAE41FA50FA00042C0F5 /* SignUpViewController.swift in Sources */,

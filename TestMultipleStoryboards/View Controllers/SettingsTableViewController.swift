@@ -11,15 +11,20 @@ import FirebaseAuth
 
 class SettingsTableViewController: UITableViewController {
     
+    var handle: AuthStateDidChangeListenerHandle?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Settings"
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+     
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.title = DataStore.shared.getUser().email!
+        }
     }
 
     override func didReceiveMemoryWarning() {
