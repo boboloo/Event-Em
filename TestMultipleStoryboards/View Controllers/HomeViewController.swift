@@ -27,11 +27,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // setup
+        
+        // setup navigation to settings
         self.navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(pushToNextVC))
+        // setup koloda
         kolodaView.dataSource = self
         kolodaView.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(pushToNextVC))
     }
     
     func pushToNextVC() {
@@ -53,6 +55,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         koloda.reloadData()
+        koloda.resetCurrentCardIndex()
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {

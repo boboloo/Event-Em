@@ -25,6 +25,7 @@ class LogoutTableViewCell: UITableViewCell {
     @IBAction func LogoutBtn(_ sender: Any) {
         // setup delegate and call logout segue from the settings table view controller
         //self.performSegue(withIdentifier: "logoutSegue", sender: AnyObject?.self)
+        DataStore.shared.logout()
     }
 }
 

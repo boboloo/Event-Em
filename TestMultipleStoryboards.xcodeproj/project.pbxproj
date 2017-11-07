@@ -10,9 +10,9 @@
 		205C0113B3F8D5EEF073B939 /* Pods_TestMultipleStoryboards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78BE66BE0413095C48912A0 /* Pods_TestMultipleStoryboards.framework */; };
 		369482D51F8B31EC00D86FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369482D41F8B31EC00D86FF6 /* AppDelegate.swift */; };
 		369482DC1F8B31EC00D86FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 369482DB1F8B31EC00D86FF6 /* Assets.xcassets */; };
-		369482EB1F8B324200D86FF6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369482EA1F8B324200D86FF6 /* MainViewController.swift */; };
 		36E51A521F8B34E600E72373 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E51A511F8B34E600E72373 /* Default-568h@2x.png */; };
 		36E51A541F8B356600E72373 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36E51A531F8B356600E72373 /* Info.plist */; };
+		783412C11FB2631F00D0DE41 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783412C01FB2631F00D0DE41 /* LoginController.swift */; };
 		78997ABB1FA91696006BC83E /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78997ABA1FA91696006BC83E /* OverlayView.xib */; };
 		78997AC01FA931C4006BC83E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */; };
 		791F3E2C1FA569D40028C37B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791F3E2A1FA569D40028C37B /* DataStore.swift */; };
@@ -40,9 +40,9 @@
 		369482D11F8B31EC00D86FF6 /* TestMultipleStoryboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMultipleStoryboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		369482D41F8B31EC00D86FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		369482DB1F8B31EC00D86FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		369482EA1F8B324200D86FF6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		36E51A511F8B34E600E72373 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		36E51A531F8B356600E72373 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		783412C01FB2631F00D0DE41 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		78997ABA1FA91696006BC83E /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		791F3E2A1FA569D40028C37B /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 		369482E71F8B31F900D86FF6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				783412C01FB2631F00D0DE41 /* LoginController.swift */,
 				78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */,
-				369482EA1F8B324200D86FF6 /* MainViewController.swift */,
 				79BA08341FA4123400F17D97 /* HomeViewController.swift */,
 				F811EAE31FA50FA00042C0F5 /* SignUpViewController.swift */,
 				8CED349D1FA51A6B002707CE /* EventDetailViewController.swift */,
@@ -357,7 +357,6 @@
 			files = (
 				791F3E411FA68D660028C37B /* Event.swift in Sources */,
 				79BF4AD21FA77AF900C3D3A8 /* ModifiedKolodaView.swift in Sources */,
-				369482EB1F8B324200D86FF6 /* MainViewController.swift in Sources */,
 				791F3E2C1FA569D40028C37B /* DataStore.swift in Sources */,
 				8CED349E1FA51A6B002707CE /* EventDetailViewController.swift in Sources */,
 				369482D51F8B31EC00D86FF6 /* AppDelegate.swift in Sources */,
@@ -369,6 +368,7 @@
 				79F167FC1FAD1F010022FBDA /* ProfileTableViewCell.swift in Sources */,
 				79BF4ACC1FA7705F00C3D3A8 /* CustomOverlayView.swift in Sources */,
 				791F3E2D1FA569D40028C37B /* User.swift in Sources */,
+				783412C11FB2631F00D0DE41 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

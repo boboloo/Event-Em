@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class SettingsTableViewController: UITableViewController {
     
-    var handle: AuthStateDidChangeListenerHandle?
+//    var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +20,10 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-     
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            self.title = DataStore.shared.getUser().id
-        }
+        
+//        self.title = DataStore.shared.getUser().id
+//        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +47,7 @@ class SettingsTableViewController: UITableViewController {
 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
-            cell.profileName.text = DataStore.shared.getUser().name
+//            cell.profileName.text = DataStore.shared.getUser().name
             return cell
         }
         else {
@@ -57,7 +56,6 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

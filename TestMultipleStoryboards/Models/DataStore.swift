@@ -21,12 +21,27 @@ class DataStore {
         ref = Database.database().reference()
     }
     
-    func getUser() -> User {
-        return self.currUser
+    func login(email: String, password: String) -> Bool {
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+        }
+        let user = Auth.auth().currentUser
+        if user == nil {
+            return false
+        }
+        return true
     }
     
-    func setUser(user: User) {
-        currUser = user
+    func logout() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch {
+            print("already logged out")
+        }
+    }
+    
+    func getUser() -> User {
+        return self.currUser
     }
     
     // Load all the events from firebase
@@ -52,13 +67,6 @@ class DataStore {
         }) { (error) in
             print(error.localizedDescription)
         }
-    }
-    
-    // Encode emails since firebase cannot handle them
-    func encodeKey(s: String) -> String {
-        var newstring = s.replacingOccurrences(of: ".", with: "%")
-        newstring = newstring.replacingOccurrences(of: "@", with: "%2E")
-        return newstring
     }
     
     // Gets an event based on the id
