@@ -8,6 +8,7 @@
 
 import UIKit
 import Koloda
+import FirebaseDatabase
 
 private var numberOfCards: Int = 3
 
@@ -20,7 +21,7 @@ class HomeViewController: UIViewController {
         }
         return array
     }()
-    
+    var ref: DatabaseReference!
     @IBOutlet weak var NoButton: UIButton!
     @IBOutlet weak var CheckButton: UIButton!
     @IBOutlet weak var kolodaView: KolodaView!
@@ -28,6 +29,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // setup
+        ref = Database.database().reference()
+        
         self.navigationItem.hidesBackButton = true
         kolodaView.dataSource = self
         kolodaView.delegate = self
@@ -47,6 +50,7 @@ class HomeViewController: UIViewController {
     @IBAction func noTapped(_ sender: Any) {
         kolodaView?.swipe(.left)
     }
+    
 }
 
 // Modifies cards interact with the view controller
@@ -66,6 +70,17 @@ extension HomeViewController: KolodaViewDelegate {
         let nc = UINavigationController(rootViewController: vc)
         // Show it to the user.
         present(nc, animated: true, completion: nil)
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        if direction == SwipeResultDirection.left {
+            let key = self.ref.child("users").child(DataStore.shared.getUser().id!)
+            key.child(DataStore.shared.getEvent(int: index).title).setValue(false)
+        }
+        else {
+            let key = self.ref.child("users").child(DataStore.shared.getUser().id!)
+            key.child(DataStore.shared.getEvent(int: index).title).setValue(true)
+        }
     }
 }
 

@@ -67,7 +67,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             Auth.auth().signIn(withEmail: nameTxtField!.text!, password: passTxtField!.text!) { (user, error) in
                 if user != nil {
                     if let user = user {
-                        let name = user.displayName
+                        //let name = user.displayName
                         let uid = user.uid
                         let email = user.email
                         
