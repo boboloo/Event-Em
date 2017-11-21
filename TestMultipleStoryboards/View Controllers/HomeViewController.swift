@@ -8,36 +8,71 @@
 
 import UIKit
 import Koloda
-import FirebaseDatabase
-
-private var numberOfCards: Int = 3
 
 class HomeViewController: UIViewController {
 
-    fileprivate var images: [UIImage] = {
-        var array: [UIImage] = []
-        for index in 0..<numberOfCards {
-            array.append(UIImage(named: "Photo-\(index + 1)")!)
-        }
-        return array
-    }()
-    var ref: DatabaseReference!
     @IBOutlet weak var NoButton: UIButton!
     @IBOutlet weak var CheckButton: UIButton!
     @IBOutlet weak var kolodaView: KolodaView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // setup
-        ref = Database.database().reference()
         
-        self.navigationItem.hidesBackButton = true
+        // setup swiping
         kolodaView.dataSource = self
         kolodaView.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(pushToNextVC))
+        
+        // setup settings navigation
+        self.navigationItem.hidesBackButton = true
+        let settingImg = resizeImage(image: UIImage(named: "settings")!, targetSize: CGSize(width: 30.0, height: 30.0))
+        let settingBtn = UIButton(type: .custom)
+        settingBtn.setImage(settingImg, for: .normal)
+        settingBtn.addTarget(self, action: #selector(pushToNextVC), for: .touchUpInside)
+        let barBtn = UIBarButtonItem(customView: settingBtn)
+        self.navigationItem.rightBarButtonItem = barBtn
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.view.backgroundColor = Style.backgroundColor
+        self.navigationController?.navigationBar.barTintColor = Style.barTintColor
+        self.navigationController?.navigationBar.tintColor = Style.textColor
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : Style.textColor]
+        self.kolodaView.backgroundColor = Style.backgroundColor
+
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
     
     func pushToNextVC() {
+        kolodaView.resetCurrentCardIndex()
         let settings = self.storyboard?.instantiateViewController(withIdentifier: "SettingsTVC") as? SettingsTableViewController
         self.navigationController?.pushViewController(settings!, animated:
             true)
@@ -50,7 +85,6 @@ class HomeViewController: UIViewController {
     @IBAction func noTapped(_ sender: Any) {
         kolodaView?.swipe(.left)
     }
-    
 }
 
 // Modifies cards interact with the view controller
@@ -62,11 +96,11 @@ extension HomeViewController: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         let storyboard = UIStoryboard(name: "EventDetail", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "EventDetailVC") as! EventDetailViewController
+        
         let event = DataStore.shared.getEvent(int: index)
         vc.ET = event.title
         vc.ED = event.description
-        vc.EI = "Photo-\(index+1)"
-        
+ 
         let nc = UINavigationController(rootViewController: vc)
         // Show it to the user.
         present(nc, animated: true, completion: nil)
@@ -74,12 +108,10 @@ extension HomeViewController: KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         if direction == SwipeResultDirection.left {
-            let key = self.ref.child("users").child(DataStore.shared.getUser().id!)
-            key.child(DataStore.shared.getEvent(int: index).title).setValue(false)
+            DataStore.shared.saveSwipe(index: index, liked: false)
         }
         else {
-            let key = self.ref.child("users").child(DataStore.shared.getUser().id!)
-            key.child(DataStore.shared.getEvent(int: index).title).setValue(true)
+            DataStore.shared.saveSwipe(index: index, liked: true)
         }
     }
 }
@@ -88,17 +120,24 @@ extension HomeViewController: KolodaViewDelegate {
 extension HomeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        return images.count
+        return DataStore.shared.eventCount()
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
         return .moderate
     }
-    
+
+    // INDEX PROBLEM
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let newView = (Bundle.main.loadNibNamed("ModifiedKolodaView", owner: self, options: nil)![0] as? ModifiedKolodaView)!
-        newView.image.image = UIImage(named: "Photo-\(index+1)")
-        newView.title!.text! = DataStore.shared.getEvent(int: index).title
+        
+        let event = DataStore.shared.getEvent(int: index)
+        let title = event.title
+        let image = DataStore.shared.getImage(title: title)
+        
+        newView.image.contentMode = .scaleAspectFit
+        newView.image.image = image
+        newView.label.text = "fat"
         newView.layer.cornerRadius = 15
         newView.layer.masksToBounds = true
         return newView

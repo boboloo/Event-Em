@@ -23,6 +23,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Sign Up"
 
         // Do any additional setup after loading the view.
         
@@ -37,6 +39,21 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         passTxtField.delegate = self
         confirmTxtField.delegate = self
         emailTxtField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.view.backgroundColor = Style.backgroundColor
+        self.navigationController?.navigationBar.barTintColor = Style.barTintColor
+        self.navigationController?.navigationBar.tintColor = Style.textColor
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : Style.textColor]
+        
+        confirmButton.setTitleColor(Style.buttonTextColor, for: .normal)
+        confirmButton.backgroundColor = Style.buttonBackgroundColor
+        cancelButton.setTitleColor(Style.buttonTextColor, for: .normal)
+        cancelButton.backgroundColor = Style.buttonBackgroundColor
     }
 
     override func didReceiveMemoryWarning() {

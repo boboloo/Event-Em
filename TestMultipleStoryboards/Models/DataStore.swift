@@ -9,6 +9,7 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 class DataStore {
     
@@ -16,6 +17,8 @@ class DataStore {
     private var ref: DatabaseReference!
     private var currUser: User!
     private var events: [Event]!
+    private var imageStorage = Storage.storage()
+    private var images: [String: UIImage]!
     
     private init() {
         ref = Database.database().reference()
@@ -31,7 +34,9 @@ class DataStore {
     
     // Load all the events from firebase
     func loadEvents() {
+
         events = [Event]()
+        images = [String: UIImage]()
         
         // Fetch the data from Firebase and store it in our internal people array.
         // This is a one-time listener.
@@ -44,26 +49,64 @@ class DataStore {
                     let title = i.key as! String
                     let event = i.value as! [String:String]
                     let description = event["event description"]
-                    let type = event["event type"]
-                    let newEvent = Event(title: title, description: description!, type: type!)
-                    self.events.append(newEvent)
+                    let etype = event["event type"]
+                    let imageURL = event["event photo"]
+                    let newEvent = Event(title: title, description: description!, type: etype!, imageURL: imageURL!)
+                    print(newEvent.title)
+                    for i in 0 ..< EventTypes.shared.count() {
+                        let eventType = EventTypes.shared.getEventType(index: i)
+                        if eventType.name == newEvent.type {
+                            if eventType.toggled! {
+                                self.events.append(newEvent)
+                                self.retrieveImage(title: title, imageURL: imageURL!)
+                                
+                            }
+                        }
+                    }
                 }
             }
-        }) { (error) in
+        })
+        { (error) in
             print(error.localizedDescription)
         }
     }
     
-    // Encode emails since firebase cannot handle them
-    func encodeKey(s: String) -> String {
-        var newstring = s.replacingOccurrences(of: ".", with: "%")
-        newstring = newstring.replacingOccurrences(of: "@", with: "%2E")
-        return newstring
+    func retrieveImage(title: String, imageURL: String) {
+        let gsReference = imageStorage.reference(forURL: "gs://event-em-68240.appspot.com/")
+
+        
+        let imageRef = gsReference.child(imageURL)
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+            } else {
+                // Data for imageURL is returned
+                let image = UIImage(data: data!)
+                self.images[title] = image
+            }
+        }
     }
     
     // Gets an event based on the id
     func getEvent(int: Int) -> Event {
         return events![int]
+    }
+    
+    func eventCount() -> Int {
+        return events.count
+    }
+    
+//    func getImages() -> [UIImage] {
+//        return images!
+//    }
+    
+    func getImage(title: String) -> UIImage {
+        return images[title]!
+    }
+    
+    func saveSwipe(index: Int, liked: Bool) {
+        let key = self.ref.child("users").child(self.getUser().id!)
+        key.child(DataStore.shared.getEvent(int: index).title).setValue(liked)
     }
 }
  

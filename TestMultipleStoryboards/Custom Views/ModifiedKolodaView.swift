@@ -11,7 +11,13 @@ import Koloda
 
 class ModifiedKolodaView: UIView {
 
-    @IBOutlet weak var title: UILabel!
+    var labelText: String?
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
-    
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        label.text = labelText
+    }
 }

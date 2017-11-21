@@ -10,6 +10,8 @@ import UIKit
 import FirebaseAuth
 
 class LogoutTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var logout: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

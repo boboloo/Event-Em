@@ -1,15 +1,17 @@
 //
-//  SettingTableViewCell.swift
+//  EventHistoryTableViewCell.swift
 //  TestMultipleStoryboards
 //
-//  Created by Richard on 11/3/17.
+//  Created by xjosuex7 on 11/7/17.
 //  Copyright © 2017 Summer Moon Solutions. All rights reserved.
 //
 
 import UIKit
 
-class SettingTableViewCell: UITableViewCell {
-
+class EventHistoryTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var eventHistory: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -14,6 +14,7 @@ import FirebaseAuth
 class MainViewController: UIViewController, UITextFieldDelegate {
     
     var alertController: UIAlertController? = nil
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameTxtField: UITextField!
     @IBOutlet weak var passTxtField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
@@ -22,6 +23,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Style.loadTheme()
+        self.navigationItem.hidesBackButton = true
         
         // initial setup
         DataStore.shared.loadEvents()
@@ -35,6 +39,24 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         signUpButton.clipsToBounds = true
         resetButton.layer.cornerRadius = 10
         resetButton.clipsToBounds = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.view.backgroundColor = Style.backgroundColor
+        self.navigationController?.navigationBar.barTintColor = Style.barTintColor
+        self.navigationController?.navigationBar.tintColor = Style.textColor
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : Style.textColor]
+        
+        titleLabel.textColor = Style.textColor
+        resetButton.setTitleColor(Style.buttonTextColor, for: .normal)
+        resetButton.backgroundColor = Style.buttonBackgroundColor
+        loginBtn.setTitleColor(Style.buttonTextColor, for: .normal)
+        loginBtn.backgroundColor = Style.buttonBackgroundColor
+        signUpButton.setTitleColor(Style.buttonTextColor, for: .normal)
+        signUpButton.backgroundColor = Style.buttonBackgroundColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +89,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             Auth.auth().signIn(withEmail: nameTxtField!.text!, password: passTxtField!.text!) { (user, error) in
                 if user != nil {
                     if let user = user {
-                        //let name = user.displayName
+                        let name = user.displayName
                         let uid = user.uid
                         let email = user.email
                         

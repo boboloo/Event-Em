@@ -9,22 +9,35 @@
 /* Begin PBXBuildFile section */
 		205C0113B3F8D5EEF073B939 /* Pods_TestMultipleStoryboards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78BE66BE0413095C48912A0 /* Pods_TestMultipleStoryboards.framework */; };
 		369482D51F8B31EC00D86FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369482D41F8B31EC00D86FF6 /* AppDelegate.swift */; };
-		369482DC1F8B31EC00D86FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 369482DB1F8B31EC00D86FF6 /* Assets.xcassets */; };
+		369482EB1F8B324200D86FF6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369482EA1F8B324200D86FF6 /* MainViewController.swift */; };
 		36E51A521F8B34E600E72373 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E51A511F8B34E600E72373 /* Default-568h@2x.png */; };
 		36E51A541F8B356600E72373 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36E51A531F8B356600E72373 /* Info.plist */; };
+		6B87E5BE1FBBAA4D00AA033F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B87E5BD1FBBAA4D00AA033F /* Style.swift */; };
+		6B87E5C01FBBCCF400AA033F /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B87E5BF1FBBCCF400AA033F /* ThemeViewController.swift */; };
+		6BD9C55B1FBE359D003C2247 /* ToggleEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD9C55A1FBE359D003C2247 /* ToggleEventsTableViewController.swift */; };
+		6BD9C55D1FBE6B07003C2247 /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD9C55C1FBE6B07003C2247 /* TouchIDViewController.swift */; };
+		6BECF7321FB253CA00D3E2A6 /* MyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECF7311FB253CA00D3E2A6 /* MyEventsTableViewCell.swift */; };
+		6BECF7341FB253E100D3E2A6 /* EventHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECF7331FB253E100D3E2A6 /* EventHistoryTableViewCell.swift */; };
+		6BECF7361FB253FD00D3E2A6 /* TouchIDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECF7351FB253FD00D3E2A6 /* TouchIDTableViewCell.swift */; };
+		6BECF7381FB2541000D3E2A6 /* ToggleEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECF7371FB2541000D3E2A6 /* ToggleEventsTableViewCell.swift */; };
+		6BECF73A1FB2541E00D3E2A6 /* MyThemesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECF7391FB2541E00D3E2A6 /* MyThemesTableViewCell.swift */; };
+		6BECF73C1FB2580100D3E2A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BECF73B1FB2580100D3E2A6 /* Assets.xcassets */; };
+		6BECF73E1FB2630200D3E2A6 /* MyThemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECF73D1FB2630200D3E2A6 /* MyThemesTableViewController.swift */; };
+		6BECF7401FB2655800D3E2A6 /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BECF73F1FB2655800D3E2A6 /* ThemeTableViewCell.swift */; };
 		78997ABB1FA91696006BC83E /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78997ABA1FA91696006BC83E /* OverlayView.xib */; };
 		78997AC01FA931C4006BC83E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */; };
 		791F3E2C1FA569D40028C37B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791F3E2A1FA569D40028C37B /* DataStore.swift */; };
 		791F3E2D1FA569D40028C37B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791F3E2B1FA569D40028C37B /* User.swift */; };
 		791F3E411FA68D660028C37B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791F3E401FA68D660028C37B /* Event.swift */; };
-		79894E991FBC965600A14317 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79894E981FBC965600A14317 /* LoginViewController.swift */; };
 		79BA08351FA4123400F17D97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA08341FA4123400F17D97 /* HomeViewController.swift */; };
 		79BA08631FA414B400F17D97 /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79BA08621FA414B400F17D97 /* EventDetail.storyboard */; };
 		79BF4ACC1FA7705F00C3D3A8 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF4ACB1FA7705F00C3D3A8 /* CustomOverlayView.swift */; };
 		79BF4ACE1FA7740D00C3D3A8 /* ModifiedKolodaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79BF4ACD1FA7740D00C3D3A8 /* ModifiedKolodaView.xib */; };
 		79BF4AD21FA77AF900C3D3A8 /* ModifiedKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BF4AD11FA77AF900C3D3A8 /* ModifiedKolodaView.swift */; };
+		79E844481FC0C35B0019B59E /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E844471FC0C35B0019B59E /* EventType.swift */; };
+		79E8444A1FC0C44B0019B59E /* EventTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E844491FC0C44B0019B59E /* EventTypes.swift */; };
+		79E8444F1FC0C8DA0019B59E /* ToggleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8444E1FC0C8DA0019B59E /* ToggleTableViewCell.swift */; };
 		79F167FC1FAD1F010022FBDA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */; };
-		79F167FE1FAD30BB0022FBDA /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */; };
 		79F168001FAD37180022FBDA /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */; };
 		8CED349E1FA51A6B002707CE /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED349D1FA51A6B002707CE /* EventDetailViewController.swift */; };
 		F811EAE41FA50FA00042C0F5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811EAE31FA50FA00042C0F5 /* SignUpViewController.swift */; };
@@ -39,22 +52,35 @@
 		34724C250A31DF0160381C00 /* Pods-TestMultipleStoryboards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMultipleStoryboards.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestMultipleStoryboards/Pods-TestMultipleStoryboards.release.xcconfig"; sourceTree = "<group>"; };
 		369482D11F8B31EC00D86FF6 /* TestMultipleStoryboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMultipleStoryboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		369482D41F8B31EC00D86FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		369482DB1F8B31EC00D86FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		369482EA1F8B324200D86FF6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		36E51A511F8B34E600E72373 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		36E51A531F8B356600E72373 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B87E5BD1FBBAA4D00AA033F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		6B87E5BF1FBBCCF400AA033F /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		6BD9C55A1FBE359D003C2247 /* ToggleEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleEventsTableViewController.swift; sourceTree = "<group>"; };
+		6BD9C55C1FBE6B07003C2247 /* TouchIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDViewController.swift; sourceTree = "<group>"; };
+		6BECF7311FB253CA00D3E2A6 /* MyEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsTableViewCell.swift; sourceTree = "<group>"; };
+		6BECF7331FB253E100D3E2A6 /* EventHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		6BECF7351FB253FD00D3E2A6 /* TouchIDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDTableViewCell.swift; sourceTree = "<group>"; };
+		6BECF7371FB2541000D3E2A6 /* ToggleEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleEventsTableViewCell.swift; sourceTree = "<group>"; };
+		6BECF7391FB2541E00D3E2A6 /* MyThemesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyThemesTableViewCell.swift; sourceTree = "<group>"; };
+		6BECF73B1FB2580100D3E2A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6BECF73D1FB2630200D3E2A6 /* MyThemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyThemesTableViewController.swift; sourceTree = "<group>"; };
+		6BECF73F1FB2655800D3E2A6 /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
 		78997ABA1FA91696006BC83E /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		791F3E2A1FA569D40028C37B /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		791F3E2B1FA569D40028C37B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		791F3E401FA68D660028C37B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		79894E981FBC965600A14317 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		79BA08341FA4123400F17D97 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		79BA08621FA414B400F17D97 /* EventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetail.storyboard; sourceTree = "<group>"; };
 		79BF4ACB1FA7705F00C3D3A8 /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomOverlayView.swift; path = "TestMultipleStoryboards/Custom Views/CustomOverlayView.swift"; sourceTree = SOURCE_ROOT; };
 		79BF4ACD1FA7740D00C3D3A8 /* ModifiedKolodaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifiedKolodaView.xib; sourceTree = "<group>"; };
 		79BF4AD11FA77AF900C3D3A8 /* ModifiedKolodaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedKolodaView.swift; sourceTree = "<group>"; };
+		79E844471FC0C35B0019B59E /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
+		79E844491FC0C44B0019B59E /* EventTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypes.swift; sourceTree = "<group>"; };
+		79E8444E1FC0C8DA0019B59E /* ToggleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTableViewCell.swift; sourceTree = "<group>"; };
 		79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		8CED349D1FA51A6B002707CE /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		D78BE66BE0413095C48912A0 /* Pods_TestMultipleStoryboards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestMultipleStoryboards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +125,7 @@
 		369482D31F8B31EC00D86FF6 /* TestMultipleStoryboards */ = {
 			isa = PBXGroup;
 			children = (
+				6B87E5BD1FBBAA4D00AA033F /* Style.swift */,
 				79F168021FAD420D0022FBDA /* Custom Views */,
 				79F168011FAD42030022FBDA /* Custom Cells */,
 				791F3E291FA569D40028C37B /* Models */,
@@ -127,11 +154,15 @@
 		369482E71F8B31F900D86FF6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				79894E981FBC965600A14317 /* LoginViewController.swift */,
-				78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */,
+				369482EA1F8B324200D86FF6 /* MainViewController.swift */,
 				79BA08341FA4123400F17D97 /* HomeViewController.swift */,
 				F811EAE31FA50FA00042C0F5 /* SignUpViewController.swift */,
 				8CED349D1FA51A6B002707CE /* EventDetailViewController.swift */,
+				78997ABF1FA931C4006BC83E /* SettingsTableViewController.swift */,
+				6BECF73D1FB2630200D3E2A6 /* MyThemesTableViewController.swift */,
+				6B87E5BF1FBBCCF400AA033F /* ThemeViewController.swift */,
+				6BD9C55A1FBE359D003C2247 /* ToggleEventsTableViewController.swift */,
+				6BD9C55C1FBE6B07003C2247 /* TouchIDViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -147,7 +178,7 @@
 		369482E91F8B320900D86FF6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				369482DB1F8B31EC00D86FF6 /* Assets.xcassets */,
+				6BECF73B1FB2580100D3E2A6 /* Assets.xcassets */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -158,16 +189,32 @@
 				791F3E2A1FA569D40028C37B /* DataStore.swift */,
 				791F3E2B1FA569D40028C37B /* User.swift */,
 				791F3E401FA68D660028C37B /* Event.swift */,
+				79E844471FC0C35B0019B59E /* EventType.swift */,
+				79E844491FC0C44B0019B59E /* EventTypes.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		79E8444B1FC0C86E0019B59E /* SettingsCells */ = {
+			isa = PBXGroup;
+			children = (
+				79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */,
+				6BECF7311FB253CA00D3E2A6 /* MyEventsTableViewCell.swift */,
+				6BECF7331FB253E100D3E2A6 /* EventHistoryTableViewCell.swift */,
+				6BECF7351FB253FD00D3E2A6 /* TouchIDTableViewCell.swift */,
+				6BECF7371FB2541000D3E2A6 /* ToggleEventsTableViewCell.swift */,
+				6BECF7391FB2541E00D3E2A6 /* MyThemesTableViewCell.swift */,
+				79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */,
+				6BECF73F1FB2655800D3E2A6 /* ThemeTableViewCell.swift */,
+			);
+			path = SettingsCells;
 			sourceTree = "<group>";
 		};
 		79F168011FAD42030022FBDA /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				79F167FD1FAD30BA0022FBDA /* SettingTableViewCell.swift */,
-				79F167FB1FAD1F010022FBDA /* ProfileTableViewCell.swift */,
-				79F167FF1FAD37180022FBDA /* LogoutTableViewCell.swift */,
+				79E8444B1FC0C86E0019B59E /* SettingsCells */,
+				79E8444E1FC0C8DA0019B59E /* ToggleTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -273,8 +320,8 @@
 			files = (
 				F8813C781FA5068E0070119E /* GoogleService-Info.plist in Resources */,
 				F8B4ACC91FA50DF60066EFC6 /* LaunchScreen.storyboard in Resources */,
+				6BECF73C1FB2580100D3E2A6 /* Assets.xcassets in Resources */,
 				F8813CB61FA50C4E0070119E /* SignUp.storyboard in Resources */,
-				369482DC1F8B31EC00D86FF6 /* Assets.xcassets in Resources */,
 				79BA08631FA414B400F17D97 /* EventDetail.storyboard in Resources */,
 				36E51A541F8B356600E72373 /* Info.plist in Resources */,
 				79BF4ACE1FA7740D00C3D3A8 /* ModifiedKolodaView.xib in Resources */,
@@ -355,20 +402,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79894E991FBC965600A14317 /* LoginViewController.swift in Sources */,
 				791F3E411FA68D660028C37B /* Event.swift in Sources */,
+				79E844481FC0C35B0019B59E /* EventType.swift in Sources */,
 				79BF4AD21FA77AF900C3D3A8 /* ModifiedKolodaView.swift in Sources */,
+				6BECF7361FB253FD00D3E2A6 /* TouchIDTableViewCell.swift in Sources */,
+				6BECF7341FB253E100D3E2A6 /* EventHistoryTableViewCell.swift in Sources */,
+				6BECF7321FB253CA00D3E2A6 /* MyEventsTableViewCell.swift in Sources */,
+				6B87E5BE1FBBAA4D00AA033F /* Style.swift in Sources */,
+				6B87E5C01FBBCCF400AA033F /* ThemeViewController.swift in Sources */,
+				369482EB1F8B324200D86FF6 /* MainViewController.swift in Sources */,
 				791F3E2C1FA569D40028C37B /* DataStore.swift in Sources */,
 				8CED349E1FA51A6B002707CE /* EventDetailViewController.swift in Sources */,
 				369482D51F8B31EC00D86FF6 /* AppDelegate.swift in Sources */,
+				6BECF73A1FB2541E00D3E2A6 /* MyThemesTableViewCell.swift in Sources */,
 				79BA08351FA4123400F17D97 /* HomeViewController.swift in Sources */,
+				6BD9C55D1FBE6B07003C2247 /* TouchIDViewController.swift in Sources */,
 				79F168001FAD37180022FBDA /* LogoutTableViewCell.swift in Sources */,
 				78997AC01FA931C4006BC83E /* SettingsTableViewController.swift in Sources */,
-				79F167FE1FAD30BB0022FBDA /* SettingTableViewCell.swift in Sources */,
+				6BECF73E1FB2630200D3E2A6 /* MyThemesTableViewController.swift in Sources */,
 				F811EAE41FA50FA00042C0F5 /* SignUpViewController.swift in Sources */,
+				79E8444F1FC0C8DA0019B59E /* ToggleTableViewCell.swift in Sources */,
+				6BECF7401FB2655800D3E2A6 /* ThemeTableViewCell.swift in Sources */,
+				79E8444A1FC0C44B0019B59E /* EventTypes.swift in Sources */,
 				79F167FC1FAD1F010022FBDA /* ProfileTableViewCell.swift in Sources */,
 				79BF4ACC1FA7705F00C3D3A8 /* CustomOverlayView.swift in Sources */,
 				791F3E2D1FA569D40028C37B /* User.swift in Sources */,
+				6BD9C55B1FBE359D003C2247 /* ToggleEventsTableViewController.swift in Sources */,
+				6BECF7381FB2541000D3E2A6 /* ToggleEventsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
