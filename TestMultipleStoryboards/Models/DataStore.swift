@@ -15,14 +15,17 @@ class DataStore {
     
     // database vars
     static let shared = DataStore()
+    private var imageStorage = Storage.storage()
     private var ref: DatabaseReference!
     
     // stuff for the current user
     private var currUser: User!
+    
     private var events: [Event]!
-    private var imageStorage = Storage.storage()
-    private var images: [String: UIImage]! // stores dictionary of the images for events
+    private var images = [String: UIImage]() // stores dictionary of the images for events
     var profileImage: UIImage?
+    
+    var likedEvents: [Event]!
     
     // value to refresh the screen
     var onDetail: Bool = false
@@ -58,7 +61,6 @@ class DataStore {
     func loadEvents() {
 
         events = [Event]()
-        images = [String: UIImage]()
         	
         // Fetch the data from Firebase and store it in our internal people array.
         // This is a one-time listener.
@@ -102,10 +104,44 @@ class DataStore {
             } else {
                 // Data for imageURL is returned
                 let image = UIImage(data: data!)
-                self.images[title] = image
+                self.images[imageURL] = image
             }
         }
     }
+    
+    func getLikedEvents() {
+        likedEvents = [Event]()
+        print(self.currUser.id!)
+        ref.child("users").child(self.currUser.id!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get the top-level dictionary.
+            let value = snapshot.value as? NSDictionary
+            if let person = value {
+                for i in person {
+
+                    let swiped = i.value as! Bool
+                    let title = i.key as! String
+                    if swiped {
+                        self.addLikedEvent(title: title)
+                    }
+                }
+            }
+
+        })
+    }
+    
+    func addLikedEvent(title: String) {
+        ref.child("events").child(title).observeSingleEvent(of: .value, with: { (snapshot) in
+            let event = snapshot.value as? [String: String]
+            
+            let description = event!["event description"]
+            let etype = event!["event type"]
+            let imageURL = event!["event photo"]
+            
+            let newEvent = Event(title: title, description: description!, type: etype!, imageURL: imageURL!)
+            self.likedEvents.append(newEvent)
+            })
+    }
+
     
     // Gets an event based on the id
     func getEvent(int: Int) -> Event {

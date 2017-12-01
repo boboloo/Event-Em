@@ -19,7 +19,9 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        for i in DataStore.shared.likedEvents {
+            print(i.title)
+        }
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barTintColor = Style.barTintColor
         self.navigationController?.navigationBar.tintColor = Style.textColor

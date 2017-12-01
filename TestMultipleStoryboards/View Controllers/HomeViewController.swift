@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
         else {
             DataStore.shared.onDetail = false
         }
-
+        DataStore.shared.getLikedEvents()
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barTintColor = Style.barTintColor
         self.navigationController?.navigationBar.tintColor = Style.textColor
@@ -141,7 +141,8 @@ extension HomeViewController: KolodaViewDataSource {
         
         let event = DataStore.shared.getEvent(int: index)
         let title = event.title
-        let image = DataStore.shared.getImage(title: title)
+        let url = event.imageURL
+        let image = DataStore.shared.getImage(title: url)
         
         newView.image.contentMode = .scaleAspectFit
         newView.image.image = image
