@@ -13,12 +13,19 @@ import FirebaseStorage
 
 class DataStore {
     
+    // database vars
     static let shared = DataStore()
     private var ref: DatabaseReference!
+    
+    // stuff for the current user
     private var currUser: User!
     private var events: [Event]!
     private var imageStorage = Storage.storage()
-    private var images: [String: UIImage]!
+    private var images: [String: UIImage]! // stores dictionary of the images for events
+    var profileImage: UIImage?
+    
+    // value to refresh the screen
+    var onDetail: Bool = false
     
     private init() {
         ref = Database.database().reference()
@@ -32,12 +39,27 @@ class DataStore {
         currUser = user
     }
     
+    func getProfilePic() {
+        let gsReference = imageStorage.reference(forURL: "gs://event-em-68240.appspot.com/")
+        
+        let imageRef = gsReference.child("defaultperson.png")
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+            } else {
+                // Data for imageURL is returned
+                let image = UIImage(data: data!)
+                self.profileImage = image!
+            }
+        }
+    }
+    
     // Load all the events from firebase
     func loadEvents() {
 
         events = [Event]()
         images = [String: UIImage]()
-        
+        	
         // Fetch the data from Firebase and store it in our internal people array.
         // This is a one-time listener.
         ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -52,7 +74,6 @@ class DataStore {
                     let etype = event["event type"]
                     let imageURL = event["event photo"]
                     let newEvent = Event(title: title, description: description!, type: etype!, imageURL: imageURL!)
-                    print(newEvent.title)
                     for i in 0 ..< EventTypes.shared.count() {
                         let eventType = EventTypes.shared.getEventType(index: i)
                         if eventType.name == newEvent.type {
@@ -74,7 +95,6 @@ class DataStore {
     func retrieveImage(title: String, imageURL: String) {
         let gsReference = imageStorage.reference(forURL: "gs://event-em-68240.appspot.com/")
 
-        
         let imageRef = gsReference.child(imageURL)
         imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
@@ -95,11 +115,7 @@ class DataStore {
     func eventCount() -> Int {
         return events.count
     }
-    
-//    func getImages() -> [UIImage] {
-//        return images!
-//    }
-    
+
     func getImage(title: String) -> UIImage {
         return images[title]!
     }

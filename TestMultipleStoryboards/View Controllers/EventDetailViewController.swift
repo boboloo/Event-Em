@@ -12,11 +12,13 @@ class EventDetailViewController: UIViewController {
     
     var ET: String?
     var ED: String?
+    var ETT: String?
 
     @IBOutlet weak var eventImage: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var eventType: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
     @IBOutlet weak var backLabel: UIButton!
+    @IBOutlet weak var lineLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,9 @@ class EventDetailViewController: UIViewController {
         self.title = ET!
         eventImage.image = DataStore.shared.getImage(title: ET!)
         eventImage.contentMode = .scaleAspectFit
-        eventDescription!.text! = ED!
+        eventDescription.text = ED!
         eventDescription.sizeToFit()
+        eventType.text = ETT!
         
         backLabel.layer.cornerRadius = 10
         backLabel.clipsToBounds = true
@@ -41,10 +44,11 @@ class EventDetailViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSForegroundColorAttributeName : Style.textColor]
         
-        descriptionLabel.textColor = Style.textColor
+        eventType.textColor = Style.textColor
         eventDescription.textColor = Style.textColor
         backLabel.setTitleColor(Style.buttonTextColor, for: .normal)
         backLabel.backgroundColor = Style.buttonBackgroundColor
+        lineLabel.backgroundColor = Style.textColor
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +58,7 @@ class EventDetailViewController: UIViewController {
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        
     }
     
 }

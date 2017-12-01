@@ -87,7 +87,6 @@ class MyThemesTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return chosenTheme.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "themeCell", for: indexPath)
@@ -97,7 +96,6 @@ class MyThemesTableViewController: UITableViewController {
         return cell
         
     }
-
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowTheme" {

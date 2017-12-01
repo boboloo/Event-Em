@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +16,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycu-AU-QrB">
+                    <rect key="frame" x="16" y="14" width="343" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="2Uk-xu-mwj"/>
+                        <constraint firstAttribute="width" constant="343" id="LsP-mz-e2L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vYE-eB-3av">
                     <rect key="frame" x="0.0" y="123" width="375" height="544"/>
                     <constraints>
@@ -23,21 +33,15 @@
                         <constraint firstAttribute="height" constant="544" id="fjV-YC-v7d"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycu-AU-QrB">
-                    <rect key="frame" x="16" y="50" width="343" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="0.98342234019745312" green="1" blue="0.9896887152534134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vYE-eB-3av" secondAttribute="trailing" id="BCU-0r-beA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ycu-AU-QrB" secondAttribute="trailing" constant="16" id="CmJ-4Z-xu6"/>
+                <constraint firstItem="Ycu-AU-QrB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="J0A-Sl-tbs"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vYE-eB-3av" secondAttribute="bottom" id="MfN-4I-1az"/>
                 <constraint firstItem="vYE-eB-3av" firstAttribute="top" secondItem="Ycu-AU-QrB" secondAttribute="bottom" constant="37" id="ew4-o4-dLk"/>
                 <constraint firstItem="vYE-eB-3av" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gQc-Tr-9Ov"/>
-                <constraint firstItem="Ycu-AU-QrB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="jgT-qa-35f"/>
                 <constraint firstItem="Ycu-AU-QrB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="nC7-ey-NM9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

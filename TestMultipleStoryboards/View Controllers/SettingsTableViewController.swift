@@ -6,17 +6,15 @@
 //  Copyright © 2017 Summer Moon Solutions. All rights reserved.
 //
 
-import UIKit
-import FirebaseAuth
+import UIKit                                                                                                                                                                                                           
 
 class SettingsTableViewController: UITableViewController {
-    
-    var handle: AuthStateDidChangeListenerHandle?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Settings"
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,38 +55,47 @@ class SettingsTableViewController: UITableViewController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
             cell.selectionStyle = .none
-            cell.profileName.text = DataStore.shared.getUser().name
+            cell.profileName.text = DataStore.shared.getUser().email
             cell.profileName.textColor = Style.textColor
+            self.tableView.rowHeight = 130
+            cell.profileImage.image = DataStore.shared.profileImage
+            
             return cell
         }
         else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "myEventsCell", for: indexPath) as! MyEventsTableViewCell
             cell.myEvents.textColor = Style.textColor
+            self.tableView.rowHeight = 50
             return cell
         }
         else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "eventHistoryCell", for: indexPath) as! EventHistoryTableViewCell
             cell.eventHistory.textColor = Style.textColor
+            self.tableView.rowHeight = 50
             return cell
         }
         else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TouchIDCell", for: indexPath) as! TouchIDTableViewCell
             cell.touchID.textColor = Style.textColor
+            self.tableView.rowHeight = 50
             return cell
         }
         else if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "toggleEventsCell", for: indexPath) as! ToggleEventsTableViewCell
             cell.toggleEvents.textColor = Style.textColor
+            self.tableView.rowHeight = 50
             return cell
         }
         else if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "myThemesCell", for: indexPath) as! MyThemesTableViewCell
             cell.myThemes.textColor = Style.textColor
+            self.tableView.rowHeight = 50
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "logoutCell", for: indexPath) as! LogoutTableViewCell
             cell.logout.textColor = Style.textColor
+            self.tableView.rowHeight = 50
             return cell
         }
     }

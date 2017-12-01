@@ -10,12 +10,17 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
 
+    var preText: String?
+    var preImage: UIImage?
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        profileImage.image = preImage
+        profileName.text = preText
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

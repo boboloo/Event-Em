@@ -35,6 +35,13 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if !DataStore.shared.onDetail {
+            self.kolodaView.resetCurrentCardIndex()
+            self.kolodaView.reloadData()
+        }
+        else {
+            DataStore.shared.onDetail = false
+        }
 
         self.view.backgroundColor = Style.backgroundColor
         self.navigationController?.navigationBar.barTintColor = Style.barTintColor
@@ -72,10 +79,10 @@ class HomeViewController: UIViewController {
     }
     
     func pushToNextVC() {
-        kolodaView.resetCurrentCardIndex()
         let settings = self.storyboard?.instantiateViewController(withIdentifier: "SettingsTVC") as? SettingsTableViewController
         self.navigationController?.pushViewController(settings!, animated:
             true)
+        DataStore.shared.onDetail = true
     }
 
     @IBAction func yesTapped(_ sender: Any) {
@@ -96,10 +103,11 @@ extension HomeViewController: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         let storyboard = UIStoryboard(name: "EventDetail", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "EventDetailVC") as! EventDetailViewController
-        
+        DataStore.shared.onDetail = true
         let event = DataStore.shared.getEvent(int: index)
         vc.ET = event.title
         vc.ED = event.description
+        vc.ETT = event.type
  
         let nc = UINavigationController(rootViewController: vc)
         // Show it to the user.
@@ -137,7 +145,7 @@ extension HomeViewController: KolodaViewDataSource {
         
         newView.image.contentMode = .scaleAspectFit
         newView.image.image = image
-        newView.label.text = "fat"
+        newView.label.text = title
         newView.layer.cornerRadius = 15
         newView.layer.masksToBounds = true
         return newView

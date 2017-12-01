@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  LoginViewController.swift
 //  TestMultipleStoryboards
 //
 //  Created by Robert on 10/8/17.
@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class MainViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var alertController: UIAlertController? = nil
     @IBOutlet weak var titleLabel: UILabel!
@@ -29,6 +29,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         // initial setup
         DataStore.shared.loadEvents()
+        DataStore.shared.getProfilePic()
         
         nameTxtField.delegate = self
         passTxtField.delegate = self
@@ -89,13 +90,14 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             Auth.auth().signIn(withEmail: nameTxtField!.text!, password: passTxtField!.text!) { (user, error) in
                 if user != nil {
                     if let user = user {
-                        let name = user.displayName
+                        //let name = user.displayName
                         let uid = user.uid
                         let email = user.email
                         
                         let user = User(id: uid, email: email!, name: "Robert")
                         DataStore.shared.setUser(user: user)
                     }
+                    
                     self.performSegue(withIdentifier: "loginSegue", sender: AnyObject?.self)
                 }
                 else {
