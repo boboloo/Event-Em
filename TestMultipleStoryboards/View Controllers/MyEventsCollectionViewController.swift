@@ -100,13 +100,16 @@ class MyEventsCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return DataStore.shared.likedEvents.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LikedEventCollectionViewCell
+        let cellEvent = DataStore.shared.likedEvents[indexPath.row]
+        cell.likedEventImage.image = DataStore.shared.getImage(title: cellEvent.imageURL)
+        cell.likedEventImage.contentMode = .scaleAspectFill
+        cell.layer.cornerRadius = 10
+        cell.clipsToBounds = true
         // Configure the cell
     
         return cell

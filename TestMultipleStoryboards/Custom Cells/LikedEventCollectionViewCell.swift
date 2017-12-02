@@ -9,6 +9,7 @@
 import UIKit
 
 class LikedEventCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var likedEventImage: UIImageView!
     
 }
